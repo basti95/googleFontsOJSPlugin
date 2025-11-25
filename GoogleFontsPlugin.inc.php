@@ -110,7 +110,7 @@ class GoogleFontsPlugin extends GenericPlugin
 
         $template = $templateMgr->fetch($this->getTemplateResource("settings.tpl"));
 
-        $output = $template;
+        $output .= $template;
 
         return false;
     }
