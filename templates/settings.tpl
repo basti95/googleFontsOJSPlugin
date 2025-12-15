@@ -1,6 +1,7 @@
 {**
  * Settings form to manage Google Fonts
  *}
+{assign var="buttonClasses" value="pkpButton inline-flex relative items-center gap-x-1 text-lg-semibold text-primary border-light hover:text-hover disabled:text-disabled bg-secondary py-[0.4375rem] px-3 border rounded"}
 <tab id="google-fonts" label="Google Fonts">
   <div class="google-fonts-settings">
     {if $googleFontsEnabled|@count > 2}
@@ -57,7 +58,7 @@
               >
                 {csrf}
                 <input type="hidden" name="font" value="{$font->id}">
-                <button type="submit" class="pkpButton">
+                <button type="submit" class="{$buttonClasses}">
                   <span class="aria-hidden">
                     {translate key="common.remove"}
                   </span>
@@ -114,7 +115,7 @@
             {/foreach}
           </select>
           <button
-            class="pkpButton"
+            class="{$buttonClasses}"
             type="submit"
           >
             {translate key="plugins.generic.googleFonts.addFont"}
